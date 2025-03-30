@@ -36,6 +36,7 @@ async function fetchProductsAsync() { //Create another function fetchProductsAsy
 }
 
 //Task 5 - Add reusable handleError function
+
 function handleError(error) { //Defining error handling function
     console.log("An error occured", error);
 }
@@ -53,4 +54,7 @@ function displayProducts(products) { //Setting up displayProducts function
     });
 }
 
+//Task 6 - Trigger both fetch methods at script load
+
 fetchProductsAsync();
+fetchProductsThen();
