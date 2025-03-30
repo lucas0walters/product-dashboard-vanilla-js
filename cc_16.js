@@ -35,8 +35,9 @@ async function fetchProductsAsync() { //Create another function fetchProductsAsy
     }
 }
 
+//Task 5 - Add reusable handleError function
 function handleError(error) { //Defining error handling function
-    console.log(error);
+    console.log("An error occured", error);
 }
 
 //Task 4 - Display products in the DOM with name, price, and image
