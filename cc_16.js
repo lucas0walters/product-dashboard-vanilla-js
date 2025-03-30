@@ -29,10 +29,7 @@ async function fetchProductsAsync() { //Create another function fetchProductsAsy
         if (!response.ok) { //checking our response status and throwing an error if !200
             throw new Error(`Network response was ${response.status}`)
         }
-        products.forEach(product => { //looping through the products array
-            console.log(product.fields.name); //logging each product name
-        });
-        displayProducts()
+        displayProducts(products)
     } catch (error) {
         handleError(error)
     }
@@ -42,8 +39,17 @@ function handleError(error) { //Defining error handling function
     console.log(error);
 }
 
+//Task 4 - Display products in the DOM with name, price, and image
+
 function displayProducts(products) { //Setting up displayProducts function
-    //Do nothing
+    const container = document.getElementById("product-container"); //Selects #product-container
+    products.slice(0, 5).forEach(product => { //looping through the first five elements of the products array
+        //Creates HTML elements to show each product’s name, price, and image.
+        const productCard = document.createElement("div");
+        productCard.innerHTML = `<h3>${product.fields.name}</h3><p>Price: $${product.fields.price}</p><img src="${product.fields.image[0].url}">`;
+        productCard.setAttribute("class", "productCard");
+        container.appendChild(productCard); //Appends them to the container.
+    });
 }
 
 fetchProductsAsync();

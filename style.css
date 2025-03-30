@@ -1,0 +1,14 @@
+.productCard {
+    display: inline-grid;
+    width: 15%;
+    background-color: lightslategray;
+    padding: 1%;
+    border: black 2px solid;
+    border-radius: 20px;
+    margin-left: 1%;
+    margin-right: 1%;
+    overflow: hidden;
+}
+img {
+    width: 200px;
+}
